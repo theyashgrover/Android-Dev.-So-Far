@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Anniversary Wishing App</string>
+    <string name="whose_anniversary_is_it">Whose Anniversary is it ?</string>
+    <string name="who_s_the_guy">Name of the Guy</string>
+    <string name="enter_the_girl_s_name">Name of the Girl</string>
+    <string name="create_anniversary_card">Create Anniversary Card</string>
+    <string name="happy_anniversary">Happy Anniversary</string>
+</resources>
