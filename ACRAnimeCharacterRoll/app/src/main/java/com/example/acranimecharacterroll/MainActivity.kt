@@ -1,5 +1,5 @@
 package com.example.acranimecharacterroll
-
+//importing bundles , views and necessary files
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -7,9 +7,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    //onCreate function starts here
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main) 
         val rollButton: Button =
             findViewById(R.id.button) // calling the roll button from resource directory (R indicates 'res folder')
         rollButton.setOnClickListener {
