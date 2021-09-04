@@ -22,7 +22,6 @@
             android:textColor="#363A43"
             android:textSize="22sp"
             android:text="What anime does this char. belong to ?"/>
-
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="match_parent"

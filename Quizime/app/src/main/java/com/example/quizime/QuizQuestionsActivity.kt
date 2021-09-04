@@ -1,4 +1,4 @@
-package com.example.quizime
+   package com.example.quizime
 
 import android.content.Intent
 import android.graphics.Color
@@ -71,65 +71,63 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener{
 
         for(option in options){
             option.setTextColor(Color.parseColor("#7A8089"))
-            option.typeface = Typeface.DEFAULT
+            option.typeface = Typeface.DEFAULT //setting the typeface (bold/italic/default appearance)
             option.background = ContextCompat.getDrawable(this , R.drawable.default_shape)
         }
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
+        when (v?.id) {
             R.id.tv_option_one -> {
-                selectedOptionView(tv_option_one , 1)
+                selectedOptionView(tv_option_one, 1)
             }
             R.id.tv_option_two -> {
-                selectedOptionView(tv_option_two , 2)
+                selectedOptionView(tv_option_two, 2)
             }
             R.id.tv_option_three -> {
-                selectedOptionView(tv_option_three , 3)
+                selectedOptionView(tv_option_three, 3)
             }
             R.id.tv_option_four -> {
-            selectedOptionView(tv_option_four , 4)
+                selectedOptionView(tv_option_four, 4)
             }
             R.id.quesubmit -> {
-                if(mSelectedOptionPosition==0){
+                if (mSelectedOptionPosition == 0) {
                     mCurrentPosition++
-                }
-                        when{
-                            mCurrentPosition <= mQuestionsList!!.size->
-                            {
-                                setQuestion()
-                            }
-                        else->{
-                       val intent = Intent(this , ResultActivity::class.java)
-                        intent.putExtra(Constants.USER_NAME , mUserName)
-                        intent.putExtra(Constants.CORRECT_ANSWERS , mCorrectAnswers)
-                        intent.putExtra(Constants.TOTAL_QUESTIONS , mQuestionsList!!.size)
-                        startActivity(intent)
-                        finish()
-                    }
 
-                }
-                }
-            else->{
-                    val question = mQuestionsList?.get(mCurrentPosition-1)
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUserName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            startActivity(intent)
+                            finish()
+                        }
+
+                    }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
                     if(question!!.correctAnswer != mSelectedOptionPosition){
-                        answerCorrectView(mSelectedOptionPosition , R.drawable.wrong_option_border)
+                        answerCorrectView(mSelectedOptionPosition,R.drawable.wrong_option_border)
                     }
                     else{
                         mCorrectAnswers++
-                 }
-        answerCorrectView(mSelectedOptionPosition , R.drawable.correct_option_border)
+                        answerCorrectView(mSelectedOptionPosition,R.drawable.correct_option_border)
+                    }
 
-        if(mCurrentPosition == mQuestionsList!!.size){
-            quesubmit.text == "FINISH"
-        }else{
-            quesubmit.text == "GO TO NEXT QUESTION"
+                    if (mCurrentPosition == mQuestionsList!!.size) {
+                        quesubmit.text == "FINISH"
+                    } else {
+                        quesubmit.text == "GO TO NEXT QUESTION"
+                    }
+                    mSelectedOptionPosition = 0
+                }
+            }
         }
-        mSelectedOptionPosition = 0
     }
-}
-    }
-
     private fun answerCorrectView(answer :Int , drawableView :Int){
         when(answer){
             1 -> {
@@ -155,7 +153,7 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener{
     }
 
     private fun selectedOptionView(tv: TextView , selectedOptionNum : Int){
-        defaultOptionsView()
+        defaultOptionsView() //resett   ing to the default view
         mSelectedOptionPosition = selectedOptionNum
 
         tv.setTextColor(Color.parseColor("#363A43"))
