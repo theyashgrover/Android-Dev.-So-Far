@@ -1,5 +1,5 @@
 package com.example.justmemeit
-
+//importing modules .. 
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
@@ -23,16 +23,16 @@ import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     var currentImageURL: String?=null
-
+//onCreate Method starts here :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        loadMeme()
+        loadMeme() //calling the loadmeme() function as soon as app starts (i.e. app modules are created)
     }
-
+//loadMeme() function starts here..
     private fun loadMeme(){
         progressBar.visibility=View.VISIBLE
-        // Instantiate the RequestQueue.
+        // Instantiate the RequestQueue 
         val queue = Volley.newRequestQueue(this)
         val url = "https://meme-api.herokuapp.com/gimme"
 
@@ -73,19 +73,19 @@ class MainActivity : AppCompatActivity() {
         queue.add(jsonObjectRequest)
 
     }
-
+//creating the function for share button..
     fun shareMeme(view: View) {
 
-    val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-    intent.putExtra(Intent.EXTRA_TEXT ,"Hi there , Checkout this coolmeme I got from Reddit ! $currentImageURL ")
-        val chooser = Intent.createChooser(intent,"Share using :")
-        startActivity(chooser)
-
-
+    val intent = Intent(Intent.ACTION_SEND) //action send is a pre-existing method and used for the share functionality..
+        intent.type = "text/plain" //defining the type of intent is important in impicit intents..
+    intent.putExtra(Intent.EXTRA_TEXT ,"Hi there , Checkout this coolmeme I got from Reddit ! $currentImageURL ") //creating a default message for sharing image
+        val chooser = Intent.createChooser(intent,"Share using :") //creating the chooser
+        startActivity(chooser) //starting the chooser overlay activity
     }
+    
+//creating the function for next button..    
     fun nextMeme(view: View) {
-        loadMeme()
+        loadMeme() //calling loadmeme() function here as we want to load another meme as person clicks on next..
 
     }
 }

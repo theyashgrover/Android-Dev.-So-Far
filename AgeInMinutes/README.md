@@ -1,0 +1,3 @@
+# How this app looks on an android device :
+<img src="https://user-images.githubusercontent.com/83108253/131477864-d72b187c-125e-415d-bec7-395c6be3c1d0.jpg" height="600px" width="350px">    <img src="https://user-images.githubusercontent.com/83108253/131477882-c830f1a7-80e8-4b97-9f82-7a49b412fd4e.jpg"  height="600px" width="350px">    <img src="https://user-images.githubusercontent.com/83108253/131477911-5149e920-fa15-4574-9d66-0f8203034854.jpg" height="600px" width="350px">    <img src="https://user-images.githubusercontent.com/83108253/131477937-de0cc78b-56f6-498b-827a-2a74f4e87ca7.jpg" height="600px" width="350px">
+
