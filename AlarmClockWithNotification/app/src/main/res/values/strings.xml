@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AlarmClockWithNotification</string>
+    <string name="time_is_displayed_here">Time is Displayed Here</string>
+</resources>
